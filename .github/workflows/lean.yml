@@ -1,0 +1,22 @@
+name: Lean
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build (Lean version from lean-toolchain)
+        run: lake build
+      - name: Check for sorry and extra axioms
+        run: |
+          lake env lean scripts/Axioms.lean | tee axioms.txt
+          ! grep -q sorryAx axioms.txt
