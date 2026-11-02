@@ -6,6 +6,7 @@ authors:
   - family-names: "Rodado Amaris"
     given-names: "Armando"
 license: MIT
+doi: "10.5281/zenodo.23900203"
 repository-code: "https://github.com/armandorodado/minkcut-lean"
 version: "1.0"
 keywords:

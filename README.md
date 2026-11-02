@@ -1,6 +1,7 @@
 # MinKCut: Lean 4 formalization for "Query Complexity of Exact Minimum k-Cut"
 
 [![Lean](https://github.com/armandorodado/minkcut-lean/actions/workflows/lean.yml/badge.svg)](https://github.com/armandorodado/minkcut-lean/actions/workflows/lean.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23900203.svg)](https://doi.org/10.5281/zenodo.23900203)
 
 Plain Lean 4 (v4.15.0, core library only: no Mathlib, no `sorry`, no `native_decide`).
 Only Lean's standard axioms (`propext`, `Classical.choice`, `Quot.sound`) are used.
@@ -36,6 +37,11 @@ depends on `sorryAx`.
 
 `MinKCut.lean` imports everything and contains the overview of what is and is not formalized.
 Section 7 of the paper maps each result to its Lean theorems.
+
+## Citation
+
+Archived on Zenodo: [doi:10.5281/zenodo.23900203](https://doi.org/10.5281/zenodo.23900203)
+(see also `CITATION.cff`).
 
 ## License
 
