@@ -1,5 +1,7 @@
 # MinKCut: Lean 4 formalization for "Query Complexity of Exact Minimum k-Cut"
 
+[![Lean](https://github.com/armandorodado/minkcut-lean/actions/workflows/lean.yml/badge.svg)](https://github.com/armandorodado/minkcut-lean/actions/workflows/lean.yml)
+
 Plain Lean 4 (v4.15.0, core library only: no Mathlib, no `sorry`, no `native_decide`).
 Only Lean's standard axioms (`propext`, `Classical.choice`, `Quot.sound`) are used.
 

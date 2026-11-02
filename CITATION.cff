@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below."
+title: "minkcut-lean: Lean 4 formalization for Query Complexity of Exact Minimum k-Cut"
+type: software
+authors:
+  - family-names: "Rodado Amaris"
+    given-names: "Armando"
+license: MIT
+repository-code: "https://github.com/armandorodado/minkcut-lean"
+version: "1.0"
+keywords:
+  - Lean 4
+  - formal verification
+  - minimum k-cut
+  - cut queries
+  - query complexity
