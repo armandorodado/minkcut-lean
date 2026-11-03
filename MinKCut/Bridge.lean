@@ -321,4 +321,23 @@ theorem Gx_opt_large (ht : 0 < t) (hw1 : 1 ≤ weight t x) (hw : 4 * weight t x 
 end GxFacts
 
 
+/-- Theorem 20, reciprocity of the fixed-slot arrays: if the cross slot s of v returns u, then
+    the cross slot of u indexed by idx v returns v, and both slots read the same bit of x; so
+    every cross edge occupies the slots associated with the same pair (i, j) at its two
+    endpoints. Same-block slots are public and listed exactly once (`nbr_complete`). -/
+theorem nbr_recip (t : Nat) (x : Nat → Nat → Bool) (ht : 0 < t) (v s : Nat) (hv : v < t * 4) (hs : s < t) :
+    nbr t x (nbr t x v s) (idx t v) = v ∧ slotBit t (nbr t x v s) (idx t v) = slotBit t v s := by
+  obtain ⟨c, i, hc, hi, rfl, hb, hix⟩ := slot_decomp t v ht hv
+  rw [hix]
+  have hcr : ∀ b, cross c b < 4 := by intro b; unfold cross; (repeat' split) <;> omega
+  have hB : ∀ b, blk t (t * cross c b + s) = cross c b := fun b => blk_eq t _ s ht hs
+  have hI : ∀ b, idx t (t * cross c b + s) = s := fun b => idx_eq t _ s hs
+  unfold nbr nbrF slotBit
+  simp only [hb, hix, hs, hi, ite_true, hB, hI]
+  rcases (by omega : c = 0 ∨ c = 1 ∨ c = 2 ∨ c = 3) with rfl | rfl | rfl | rfl
+  · cases h : x i s <;> simp [cross, h]
+  · cases h : x s i <;> simp [cross, h]
+  · cases h : x s i <;> simp [cross, h]
+  · cases h : x i s <;> simp [cross, h]
+
 end MinKCut

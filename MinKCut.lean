@@ -157,6 +157,7 @@ import MinKCut.Bridge
           (bridge-min3), λ₃(G_x) = 1 + min{λ₂(H_x), m - 1} (`Gx_lambda3`), and the structure
           of the optima: for 2|x| ≤ m - 2 every optimum keeps J whole and cuts H_x exactly along
           (A, B) (`Gx_opt_small`); for 2|x| ≥ m every optimum keeps H_x whole (`Gx_opt_large`).
+          Reciprocity of the fixed-slot arrays: `nbr_recip`.
           With m = 2k and |x| ∈ {k-1, k} these are the cases used in the proof.
 
   Not formalized: the randomized sparsifier and its query cost, the Grebinski–Kucherov

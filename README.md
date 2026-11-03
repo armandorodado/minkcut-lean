@@ -34,7 +34,7 @@ depends on `sorryAx`.
 | `MinKCut/Disjointness.lean` | Part M: deterministic communication complexity of set disjointness |
 | `MinKCut/LowerBounds.lean` | Parts N–P: Lemma 25 threshold, Lemma 27 and Corollary 28 (deterministic), Propositions 22 and 29 (upper bound) |
 | `MinKCut/Truncation.lean` | Part Q: expected to worst-case query bounds |
-| `MinKCut/Bridge.lean` | Part R: Theorem 20 on the graphs G_x — equation (bridge-min3) and the structure of the optima |
+| `MinKCut/Bridge.lean` | Part R: Theorem 20 on the graphs G_x — equation (bridge-min3), the structure of the optima, and reciprocity of the fixed-slot arrays |
 
 `MinKCut.lean` imports everything and contains the overview of what is and is not formalized.
 Section 7 of the paper maps each result to its Lean theorems.

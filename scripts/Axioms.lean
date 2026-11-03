@@ -57,3 +57,4 @@ open MinKCut
 #print axioms Gx_lambda3
 #print axioms Gx_opt_small
 #print axioms Gx_opt_large
+#print axioms nbr_recip
