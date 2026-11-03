@@ -10,6 +10,7 @@ import MinKCut.Simulation
 import MinKCut.Disjointness
 import MinKCut.LowerBounds
 import MinKCut.Truncation
+import MinKCut.Bridge
 
 /-
   Formal proofs for "Query Complexity of Exact Minimum k-Cut":
@@ -17,7 +18,7 @@ import MinKCut.Truncation
 
   Plain Lean 4 core (tested with Lean 4.15.0), no Mathlib, no `sorry`, no `native_decide`.
   Only Lean's standard axioms (propext, Classical.choice, Quot.sound) are used.
-  Build with `lake build` (about two minutes; twelve modules under MinKCut/).
+  Build with `lake build` (about two minutes; thirteen modules under MinKCut/).
 
   The theorems of the paper are statements about query algorithms (randomized, communication
   and quantum query complexity). Those models are not available in plain Lean, so this file
@@ -151,6 +152,12 @@ import MinKCut.Truncation
           `trunc_cost`, `trunc_run`, `markov_count` (Markov's inequality over S equally likely
           seeds), and `truncate_errors` (truncating at T queries adds at most C·S/(T+1) wrong
           seeds to a randomized algorithm of expected cost C).
+
+  Part R  Theorem 20 on the concrete graphs G_x = H_x + K_m + bridge (`Gx`): equation
+          (bridge-min3), λ₃(G_x) = 1 + min{λ₂(H_x), m - 1} (`Gx_lambda3`), and the structure
+          of the optima: for 2|x| ≤ m - 2 every optimum keeps J whole and cuts H_x exactly along
+          (A, B) (`Gx_opt_small`); for 2|x| ≥ m every optimum keeps H_x whole (`Gx_opt_large`).
+          With m = 2k and |x| ∈ {k-1, k} these are the cases used in the proof.
 
   Not formalized: the randomized sparsifier and its query cost, the Grebinski–Kucherov
   reconstruction bound, Razborov's randomized disjointness bound and the quantum adjacent-weight bound

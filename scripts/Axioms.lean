@@ -54,3 +54,6 @@ open MinKCut
 #print axioms cor28_promise
 #print axioms cor28_det_lb
 #print axioms truncate_errors
+#print axioms Gx_lambda3
+#print axioms Gx_opt_small
+#print axioms Gx_opt_large
